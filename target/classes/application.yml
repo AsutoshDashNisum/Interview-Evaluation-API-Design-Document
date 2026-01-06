@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: interview-evaluation-api
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.interview: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+# AI/LLM Configuration
+ai:
+  enabled: false
+  provider: "openai"
+  apiKey: ${OPENAI_API_KEY:DUMMY_API_KEY}
+  model: "gpt-4-turbo"
+  temperature: 0.0
+
+# Application-specific configuration
+app:
+  environment: ${APP_ENVIRONMENT:development}
